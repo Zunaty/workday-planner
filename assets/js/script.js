@@ -4,7 +4,7 @@ var today = moment().format("LL");
 document.getElementById("currentDay").innerText = today;
 
 // Checks the current time and updates the colors of each time block
-var hourUpdate = function() {
+function hourUpdate() {
     for(var i = 1; i < 10; i++) {
         var x = i + 8;
         if(currentTime > x) {
@@ -18,7 +18,7 @@ var hourUpdate = function() {
 };
 
 // Reset the page
-var reset = function() { 
+function reset() { 
     tasks = [];
     localStorage.setItem("tasks", JSON.stringify(tasks));
     location.reload();
@@ -26,16 +26,32 @@ var reset = function() {
 
 // Populate data back into textarea
 function createData(text, time) {
-    $(`#row${time} textarea`).val(text);
+    var x = time - 8;
+    $(`#row${x} textarea`).val(text);
+};
+
+// Saving to tasks to local storage
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+};
+
+// Loads the data from local storage to the tasks array
+function loadData() {
+    tasks = JSON.parse(localStorage.getItem("tasks"));
+
+    if(!tasks) {
+        tasks = [];
+    }
+
+    for(var i = 0; i < tasks.length; i++){
+        createData(tasks[i].text, tasks[i].time)
+    }
 };
 
 // Save button is clicked
 $(".savebtn").click(function(){
     var taskText = $(this).siblings('textarea').val();
     var taskTime = $(this).siblings('p').text();
-
-    console.log(taskText);
-    console.log(taskTime);
 
     tasks.push({
         text: taskText,
@@ -45,25 +61,6 @@ $(".savebtn").click(function(){
     saveTasks();
 });
 
-// Saving to tasks to local storage
-var saveTasks = function() {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-};
-
-// Loads the data from local storage to the tasks array
-var loadData = function() {
-    tasksLS = JSON.parse(localStorage.getItem("tasks"));
-
-    if(!tasksLS) {
-        tasks = [];
-    }
-
-    for(var i = 0; i < tasksLS.length; i++){
-        console.log(tasksLS[i]);
-        createData(tasksLS.text, tasksLS.time)
-        console.log(tasksLS.text)
-    }
-};
-
 loadData();
-setInterval(hourUpdate(), (1000*30));
+hourUpdate();
+setInterval(function(){hourUpdate()}, (1000*60));
