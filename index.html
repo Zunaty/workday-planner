@@ -27,6 +27,10 @@
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
+
+      <div class="container">
+        <button class="btn btn-dark" id="reset" onclick="reset()">Reset your day</button>
+      </div>
     </header>
     
     <div class="container">
@@ -36,10 +40,11 @@
         <div class="col-2 text-center border-right border-dark h-100 d-inline-block bg-dark text-white">
           <p>9:00 am</p>
         </div>
-        <textarea class="col-8 taskZone h-100 bg-secondary"></textarea>
-        <div class="col-2 align-middle h-100 d-inline-block savebtn mx-0">
-          <img src="./assets/images/save.svg" style="width: 45px;">
+        <textarea class="col-8 taskZone h-100"></textarea>
+        <div class="col-2 align-center h-100 d-inline-block savebtn mx-0">
+          <img src="./assets/images/save.svg" style="width: 45px;" class="m-auto">
         </div>
+        <p style="opacity: 0;">9</p>
       </div>
 
       <!-- 10am block -->
@@ -47,10 +52,11 @@
         <div class="col-2 text-center border-right border-dark h-100 d-inline-block bg-dark text-white">
           <p>10:00 am</p>
         </div>
-        <div class="col-8 taskZone h-100 d-inline-block bg-success"></div>
+        <textarea class="col-8 taskZone h-100"></textarea>
         <div class="col-2 align-middle h-100 d-inline-block savebtn mx-0">
           <img src="./assets/images/save.svg" style="width: 45px;">
         </div>
+        <p style="opacity: 0;">10</p>
       </div>
 
       <!-- 11am block -->
@@ -58,10 +64,11 @@
         <div class="col-2 text-center border-right border-dark h-100 d-inline-block bg-dark text-white">
           <p>11:00 am</p>
         </div>
-        <div class="col-8 taskZone h-100 d-inline-block bg-info"></div>
+        <textarea class="col-8 taskZone h-100"></textarea>
         <div class="col-2 align-middle h-100 d-inline-block savebtn mx-0">
           <img src="./assets/images/save.svg" style="width: 45px;">
         </div>
+        <p style="opacity: 0;">11</p>
       </div>
 
       <!-- 12pm block -->
@@ -69,10 +76,11 @@
         <div class="col-2 text-center border-right border-dark h-100 d-inline-block bg-dark text-white">
           <p>12:00 pm</p>
         </div>
-        <div class="col-8 taskZone h-100 d-inline-block"></div>
+        <textarea class="col-8 taskZone h-100"></textarea>
         <div class="col-2 align-middle h-100 d-inline-block savebtn mx-0">
           <img src="./assets/images/save.svg" style="width: 45px;">
         </div>
+        <p style="opacity: 0;">12</p>
       </div>
 
       <!-- 1pm block -->
@@ -80,10 +88,11 @@
         <div class="col-2 text-center border-right border-dark h-100 d-inline-block bg-dark text-white">
           <p>1:00 pm</p>
         </div>
-        <div class="col-8 taskZone h-100 d-inline-block"></div>
+        <textarea class="col-8 taskZone h-100"></textarea>
         <div class="col-2 align-middle h-100 d-inline-block savebtn mx-0">
           <img src="./assets/images/save.svg" style="width: 45px;">
         </div>
+        <p style="opacity: 0;">13</p>
       </div>
 
       <!-- 2pm block -->
@@ -91,10 +100,11 @@
         <div class="col-2 text-center border-right border-dark h-100 d-inline-block bg-dark text-white">
           <p>2:00 pm</p>
         </div>
-        <div class="col-8 taskZone h-100 d-inline-block"></div>
+        <textarea class="col-8 taskZone h-100"></textarea>
         <div class="col-2 align-middle h-100 d-inline-block savebtn mx-0">
           <img src="./assets/images/save.svg" style="width: 45px;">
         </div>
+        <p style="opacity: 0;">14</p>
       </div>
 
       <!-- 3pm block -->
@@ -102,10 +112,11 @@
         <div class="col-2 text-center border-right border-dark h-100 d-inline-block bg-dark text-white">
           <p>3:00 pm</p>
         </div>
-        <div class="col-8 taskZone h-100 d-inline-block"></div>
+        <textarea class="col-8 taskZone h-100"></textarea>
         <div class="col-2 align-middle h-100 d-inline-block savebtn mx-0">
           <img src="./assets/images/save.svg" style="width: 45px;">
         </div>
+        <p style="opacity: 0;">15</p>
       </div>
 
       <!-- 4pm block -->
@@ -113,10 +124,11 @@
         <div class="col-2 text-center border-right border-dark h-100 d-inline-block bg-dark text-white">
           <p>4:00 pm</p>
         </div>
-        <div class="col-8 taskZone h-100 d-inline-block"></div>
+        <textarea class="col-8 taskZone h-100"></textarea>
         <div class="col-2 align-middle h-100 d-inline-block savebtn mx-0">
           <img src="./assets/images/save.svg" style="width: 45px;">
         </div>
+        <p style="opacity: 0;">16</p>
       </div>
 
       <!-- 5pm block -->
@@ -124,10 +136,11 @@
         <div class="col-2 text-center border-right border-dark h-100 d-inline-block bg-dark text-white">
           <p>5:00 pm</p>
         </div>
-        <div class="col-8 taskZone h-100 d-inline-block"></div>
+        <textarea class="col-8 taskZone h-100"></textarea>
         <div class="col-2 align-middle h-100 d-inline-block savebtn mx-0">
           <img src="./assets/images/save.svg" style="width: 45px;">
         </div>
+        <p style="opacity: 0;">17</p>
       </div>
     </div>
 
